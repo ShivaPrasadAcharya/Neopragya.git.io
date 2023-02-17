@@ -2,127 +2,125 @@
 <html>
 
 <head>
-  <title>neopragya</title>
-  <script type="text/javascript"
-    src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=q4_fBr5dC1xRMlBlNpT_DvmBEpTc_7Aw1Oonpwhf4bce7wlUp4GkXK6JlRx0aP0P1JjmYBaVZOQ0x7MDBDaztgCpnQD-MS-ylPicOPp22mY"
-    charset="UTF-8"></script>
+     <script type="text/javascript"
+          src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=q4_fBr5dC1xRMlBlNpT_DvmBEpTc_7Aw1Oonpwhf4bce7wlUp4GkXK6JlRx0aP0P1JjmYBaVZOQ0x7MDBDaztgCpnQD-MS-ylPicOPp22mY"
+          charset="UTF-8"></script>
+     <title>Neo-Pragya</title>
+     <style>
+          .row {
+               display: flex;
+               flex-wrap: nowrap;
+          }
 
-  <style>
-    .row {
-      display: flex;
-      flex-wrap: nowrap;
-    }
+          .column {
+               flex: 50%;
+               padding: 10px;
+               text-align: left;
+          }
 
-    .column {
-      flex: 50%;
-      padding: 10px;
-      text-align: left;
-    }
+          p {
+               word-wrap: break-word;
+               text-indent: -20px;
+               padding-left: 20px;
+          }
 
-    p {
-      word-wrap: break-word;
-      text-indent: -20px;
-      padding-left: 20px;
-    }
+          .tab1 {
+               word-wrap: break-word;
+               padding-left: 20px;
+          }
 
-    .tab1 {
-      word-wrap: break-word;
-      padding-left: 20px;
-    }
+          .tab2 {
+               word-wrap: break-word;
+               padding-left: 40px;
+          }
 
-    .tab2 {
-      word-wrap: break-word;
-      padding-left: 40px;
-    }
+          footer {
+               margin-top: 50px;
+               border-top: 1px solid silver;
+               font-size: 0.8em;
+          }
 
-    footer {
-      margin-top: 50px;
-      border-top: 1px solid silver;
-      font-size: 0.8em;
-    }
+          footer ol {
+               padding-left: 20px;
+          }
 
-    footer ol {
-      padding-left: 20px;
-    }
+          /** * Initialiazing a `footnotes` counter on the wrapper */
+          article {
+               counter-reset: footnotes;
+          }
 
-    /** * Initialiazing a `footnotes` counter on the wrapper */
-    article {
-      counter-reset: footnotes;
-    }
+          /** * Inline footnotes references * 1. Increment the counter at each new reference * 2. Reset link styles to make it appear like regular text */
+          [aria-describedby="footnote-label"] {
+               counter-increment: footnotes;
+               /* 1 */
+               text-decoration: none;
+               /* 2 */
+               color: inherit;
+               /* 2 */
+               cursor: default;
+               /* 2 */
+               outline: none;
+               /* 2 */
+          }
 
-    /** * Inline footnotes references * 1. Increment the counter at each new reference * 2. Reset link styles to make it appear like regular text */
-    [aria-describedby="footnote-label"] {
-      counter-increment: footnotes;
-      /* 1 */
-      text-decoration: none;
-      /* 2 */
-      color: inherit;
-      /* 2 */
-      cursor: default;
-      /* 2 */
-      outline: none;
-      /* 2 */
-    }
+          /** * Actual numbered references * 1. Display the current state of the counter (e.g. `[1]`) * 2. Align text as superscript * 3. Make the number smaller (since it's superscript) * 4. Slightly offset the number from the text * 5. Reset link styles on the number to show it's usable */
+          [aria-describedby="footnote-label"]::after {
+               content: '[' counter(footnotes) ']';
+               /* 1 */
+               vertical-align: auto;
+               /* 2 */
+               font-size: 1em;
+               /* 3 */
+               margin-left: 2px;
+               /* 4 */
+               color: blue;
+               /* 5 */
+               text-decoration: underline;
+               /* 5 */
+               cursor: pointer;
+               /* 5 */
+               -webkit-user-select: text;
+               -moz-user-select: text;
+               -ms-user-select: text;
+               user-select: text;
+          }
 
-    /** * Actual numbered references * 1. Display the current state of the counter (e.g. `[1]`) * 2. Align text as superscript * 3. Make the number smaller (since it's superscript) * 4. Slightly offset the number from the text * 5. Reset link styles on the number to show it's usable */
-    [aria-describedby="footnote-label"]::after {
-      content: '[' counter(footnotes) ']';
-      /* 1 */
-      vertical-align: auto;
-      /* 2 */
-      font-size: 1em;
-      /* 3 */
-      margin-left: 2px;
-      /* 4 */
-      color: blue;
-      /* 5 */
-      text-decoration: underline;
-      /* 5 */
-      cursor: pointer;
-      /* 5 */
-      -webkit-user-select: text;
-      -moz-user-select: text;
-      -ms-user-select: text;
-      user-select: text;
-    }
+          [aria-describedby="footnote-label"]::after {
+               -webkit-user-select: text;
+               -moz-user-select: text;
+               -ms-user-select: text;
+               user-select: text;
+          }
 
-    [aria-describedby="footnote-label"]::after {
-      -webkit-user-select: text;
-      -moz-user-select: text;
-      -ms-user-select: text;
-      user-select: text;
-    }
+          /** * Resetting the default focused styles on the number */
+          [aria-describedby="footnote-label"]:focus::after {
+               outline: thin dotted;
+               outline-offset: 2px;
+               color: brown;
+               font-weight: bold;
+          }
 
-    /** * Resetting the default focused styles on the number */
-    [aria-describedby="footnote-label"]:focus::after {
-      outline: thin dotted;
-      outline-offset: 2px;
-      color: brown;
-      font-weight: bold;
-    }
+          [aria-label="Back to content"] {
+               font-size: 1em;
+               color: darkblue;
+          }
 
-    [aria-label="Back to content"] {
-      font-size: 1em;
-      color: darkblue;
-    }
+          /** * Highlight target note */
+          footer :target {
+               background: lightgrey;
+          }
 
-    /** * Highlight target note */
-    footer :target {
-      background: lightgrey;
-    }
+          /** * Visually hidden yet accessible content */
+          .p {
+               color: brown;
+               font-style: italic;
+          }
 
-    /** * Visually hidden yet accessible content */
-    .p {
-      color: brown;
-      font-style: italic;
-    }
-
-    #developedby {
-      font-style: italic;
-      color: brown;}
-
-        /* Style for the link container */
-        .link-container {
+          #developedby {
+               font-style: italic;
+               color: brown;
+          }
+          .link-container {
         position: fixed;
         bottom: 50%;
         left: 0;
@@ -138,379 +136,553 @@
         margin-right: 20px;
         font-size: larger;
       }
-    
-  </style>
+     </style>
 </head>
 
-<body> 
-
-  <center>श्रीसरस्वत्यै नमः <BR><BR> <a href="" target="_blank">NEP </a><a
-      href="" target="_blank">ENG</a> </center>
-  <div class="hyperlink">
-    <p>CONTENT</p>
-    <p><a href="#COL1">1. Constitution and Constitutionalism</a></p>
-    <p><a href="#COL2">2. Constitutional Development of Nepal</a></p>
-    <p><a href="#COL3">3. Features of Constitution of Nepal (2072)</a></p>
-    <p><a href="#COL4">4. Fundamental Rights</a></p>
-    <p><a href="#COL5">5. Directive Principles and Policies</a></p>
-    <p><a href="#COL6">6. Independent Judiciary</a></p>
-    <p><a href="#COL7">7. SC on Constitutional Matters</a></p>
-    <p><a href="#COL8"> 8. Constitutional Bench</a></p>
-    <p><a href="#COL9">9. Public Interest Litigation</a></p>
-    <p><a href="#COL10">10. Judicial Review</a></p>
-    <p><a href="#COL11">11. Constitutional Bodies of Nepal:</a></p>
-    <p><a href="#COL11a"> a. Attorney General</a></p>
-    <p><a href="#COL11b"> b. Election Commission</a></p>
-    <p><a href="#COL11c"> c. CIAA</a></p>
-    <p><a href="#COL11d"> d. National Human Rights Commission</a></p>
-    <p><a href="#COL11e"> e. National Commission for Women</a></p>
-    <p><a href="#COL12">12. Federalism</a></p>
-    <p><a href="#COL13">13.Amendment of the Constitution</a></p>
-    <p><a href="#Extra">Extra</a></p>
-  </div>
-
-  <article>
-    <h2>संवैधानिक कानून (Constitutional Law)</h2>
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> १. संविधान र संविधानवादका आधारभूत सिद्धान्तहरू</h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL1"> 1. Basic Principles of Constitution and Constitutionalism</h3>
-        <h4>Basic Principle of Constitution</h4>
-        <p>1. Constitution as a Fundamental Law of the Land</p>
-        <p>2. Constitution as a Social Contract Document</p>
-        <p>3. Constitution as an Outcome of Constituent Power</p>
-        <p>4. Constitution Amendment Power is not Constitution Remaking Power</p>
-        <p>5. No Constitution without FRs and No FRs without JR</p>
-        <p>6. Constitution as a Politico-Legal Document</p>
-        <p>7. Constitution as a Living Document</p>
-        <p>9. Constitution as a combination of legal and non-legal Rules</p>
-        <p>10. Variability: CONSTITUTION, Constitution and constitution carries different meaning</p>
-        <p><b>11. Constitution as Grundnorm:</b>  Grundnorm is highest norm through which other norm derives their validity. Constitution is the paramount law. If a legal norm in a higher layer of this hierarchy conflicts with a legal norm in a lower layer the former will prevail.<a href="#fn202302160735" aria-describedby="footnote-label" id="fn202302160736"></a><a href="#fn202302160822" aria-describedby="footnote-label" id="fn202302160823"></a></p>
-        <p><b>12. Constitution as Ultimate Rule of Recognition (ROR):</b> Constitution is regarded as a Ultimate Rule of Recognition. Other rules of recognition (some provision of statutes are also ROR) also  derives their recognition through the constitution. <a href="#fn202302160904" aria-describedby="footnote-label" id="fn202302160905"></a><a href="#fn202302160924" aria-describedby="footnote-label" id="fn202302160925"></a></p>
-        
-        <p>13. Preamble as a part of Constitution</p>
-        <p>14. Unique Constitutional Interpretation Principle </p>
-        <p>15. Constitution as Symbol of Sovereignty</p>
-        <p>16. Constitution can only be repealed by Constitution</p>
-        <p>17. Constitution as a Safety Valve <a
-        href="#fn3" aria-describedby="footnote-label" id="fn4"></a></p>
-        <p>18. Constitution is formed either by Revolution or by Evolution</p>
-        <p>19.Constitution is both Prescriptive and Descriptive: Power is Prescribed and procedure are described</p>
-        <p>20. Constitution maintains the balance between the power of Government and the rights of Governed.</p>
-        <p>21. Constitution have both Binding Value, Moral Value and No Value</p>
-        <p>22. Just Constitution is formed through Veil of Ignorance in Original Position</p>
-        <p>23.Constitution is a matter of Interpretation: Dworkin</p>
-        <p>24.Constitution as the Command of Sovereign</p>
-        </h4>
-        <p>25. Sovereign creates the Constitution and Constitution give Recognition to the Sovereign <a
-            href="#fn5" aria-describedby="footnote-label" id="fn6"></a></p>
-        <h4>Types of Constitution</h4>
-        <p></p>
-        <h4>8.Basic Principle of Constitutionalism</h4>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-   
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> २. नेपालको संवैधानिक विकासक्रम </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL2"> 2. Constitutional Development of Nepal </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ३. नेपालको संविधानका आधारभूत विशेषताहरू 
-        </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL3"> 3. The Basic Features of Constitution of Nepal (2072) </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ४. मौलिक हक, कर्तव्य र संवैधानिक उपचार 
-        </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL4"> 4. Fundamental Rights, Duties and Constitutional Remedies </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ५. राज्यको दायित्व निर्देशक सिद्धान्त तथा नीतिहरूको औचित्यता र परिसीमा
-          
-        </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL5"> 5. Justification and Limitation of Obligation of State, Directive
-          Principles and Policies </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ६. स्वतन्त्र न्यायपालिकाको आधारभूत सिद्धान्तहरू </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL6"> 6. Basic Principles of Independent Judiciary </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ७. संवैधानिक विषयमा सर्वोच्च अदालतको योगदान </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL7"> 7. Contribution to the Supreme Court on Constitutional Matters</h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ८. संवैधानिक इजलास </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL8"> 8. Constitutional Bench </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ९. सार्वजनिक सरोकारका विषयहरु </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL9"> 9. Public Interest Litigation </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2 id="COL10">१०. न्यायीक पुनरावलोकन र यसका सिमाहरु <br>(10. Judicial Review & Its Limitation ) </h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3>न्यायिक पुनरावलोकन </h3>
-        <p></p>
-        <h4></h4>
-        <p></p>
-
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 >Judicial Review</h3>
-        <p></p>
-        <h4></h4>
-        <p><b>Definition:</b></p>
-      </div>
-    </div>
-    <h2 id="COL11"> ११. नेपालका संवैधानिक अङ्गहरूः <br>(11. Constitutional Bodies of Nepal:)</h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> संवैधानिक अङ्ग</h3>
-        <p></p>
-        <h4></h4>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 >Constitutional Bodies  </h3>
-        <p></p>
-        <h4></h4>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> क. महान्यायाधिवक्ता </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL11a"> a. Attorney General </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ख. निर्वाचन आयोग </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL11b"> b. Election Commission </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ग. अख्तियार दुरुपयोग अनुसन्धान आयोग 
-        </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL11c"> c. Commission for Investigation of Abuse of Authority </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> घ. राष्ट्रिय मानव अधिकार आयोग </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL11d"> d. National Human Rights Commission </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> ङ. राष्ट्रिय महिला आयोग </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL11e"> e. National Commission for Women</h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> १२. नेपालको संघीयता सम्बन्धी व्यवस्थामा संघ, प्रदेश र स्थानीय सरकारको
-          अधिकारक्षेत्र र अन्तरसम्बन्ध</h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL12e"> 12. Jurisdiction and Interrelation of Federation, Province & Local
-          Government in Federal Nepal </h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-       <h3> १३. संविधान संशोधनका आधारभूत सिद्धान्त र प्रकृया </h3>
-        <p></p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-        <h3 id="COL13"> 13. Basic Principle and Process of Amendment of the Constitution</h3>
-        <p></p>
-      </div>
-    </div>
-    <h2></h2>
-    </div>
-    <div class="row">
-      <div class="column" style="background-color:#aaa;">
-          <h3>नमूनाको लागि </h3>
-           <p></p>
-           <p>!लेख्नुहोस् <a href="#fn7" aria-describedby="footnote-label"
-                     id="fn8"></a>!निरन्तरलेख्नुहोस्</p>
-      </div>
-      <div class="column" style="background-color:#bbb;">
-           <h3 id="Extra">  Only for Sample </h3>
-           <p>xyz <a href="#fn9" aria-describedby="footnote-label" id="fn10"></a>
-                Continue your text
-                here</p>
-           <p>xyz <a href="#fn11" aria-describedby="footnote-label" id="fn12"></a> Continue                         your text                         here</p>
-      </div>
- </div>
- </div>
-</article>
-
-<footer>
- <h2 class="visually-hidden" id="footnote-label">Endnotes</h2>
- <ol>
-  <li id="fn202302160735">!TypeHere: Cases of SC of India which regard Indian Constituion as GRUNDNORM: (i) In the case of Squadron Leader H. S. Kulshrestha v Union of India, the court held that ‘According to the theory of the eminent jurist Kelson, in every country there is a hierarchy of laws, and the highest law is known as the GRUNDNORM of law. In our country the GRUNDNORM is the Constitution.’
-
-    (ii) In yet another case of Abdur Sukur & Another v State of West Bengal & others, ‘…enshrined in the Constitution of India, which is the GRUNDNORM of all Indian statutes.’
-     
-    (iii) In another case of Om Prakash Gupta v Hindustan Petroleum Corporation Ltd. & Anr., it was again held that ‘Since the limits have been defined by the Constitution, they are, in jurisprudential term, ‘the GRUNDNORM’.’ 
-     
-    (iv) In another case of Sunil v State of M. P. & Another, it was again mentioned that, ‘The Constitution of India is the GRUNDNORM – the paramount law of the country. All other laws derive their origin and are supplementary and incidental to the principles laid down in the Constitution.’ 
-     
-   (v) Government of Andhra Pradesh & Ors vs Smt. P. Laxmi Devi the Supreme Court observed, ‘According to Kelson, in every country there is a hierarchy of legal norms, headed by what he calls as the ‘GRUNDNORM’. If a legal norm in a higher layer of this hierarchy conflicts with a legal norm in a lower layer the former will prevail. In India the GRUNDNORM is the Indian Constitution.’<a href=" https://www.casemine.com/."
-     target="_blank">!See</a> <a href="#fn202302160736" aria-label="Back to content">[&#x21A9;]</a>
-</li>
-<li id="fn202302160822">!TypeHere:- CRITICISM:Constitution of India is a document. It is a collection of norms. As per Kelson GRUNDNORM is the highest norm and highest norm must be  single norm not two or more. Kelson's pure theory of law presumes  GRUNDNORM and not the Grundnorms. All the norms together cannot be a GRUNDNORM.  In fact the GRUNDNORM must be that  norm through which even the Constitution derives its Validity. Indian SC failed to consider such characteristic aspect of GRUNDNORM and falsily concluded that Constitution of India is a GRUNDNORM. <a href="" target="_blank">!See</a> <a href="#fn202302160823"
-  aria-label="Back to content">[&#x21A9;]</a></li>
-
-      <li id="fn202302132204">Type footnote here. <a
-                href="https://shivaprasadacharya.github.io/BarSyllables.git.io/#EVL" target="_blank">See
-                EVL</a> <a href="#fn202302132205" aria-label="Back to content">[&#x21A9;]</a></li>            
-
-       </li>
-      <li id="fn13">Type footnote here. <a href="" target="_blank">यहाँ थिच्नुहोस्</a><a href="#fn14" aria-label="Back to content">[&#x21A9;]</a></li>
-
-<a href="#fn202302160904"
-        aria-label="Back to content">[&#x21A9;]</a></li>
-<li id="fn202302160904">!TypeHere:  HLA Hart defines law as the union of primary and secondary rules.   According to HLA Hart, pre-legal world (primitive
-  society) is without legislature or courts. People are bounded only by primary rules(social rules) . One of the
-  major defects of primary rules is Uncertainty. This means that society contains a bulk of social rules. It is
-  uncertain that which social rule is in fact authoritative and administrative. This flaw of uncertainity is
-  removed through ROR as it recognizes certain social rule as law.<a href="" target="_blank">!See</a> <a href="#fn202302160905" aria-label="Back to content">[&#x21A9;]</a></li>
-
-      <a href="#fn" aria-describedby="footnote-label" id="fn"></a>
-      <li id="fn">!TypeHere: <a href="" target="_blank">!See</a> <a href="#fn"
-        aria-label="Back to content">[&#x21A9;]</a></li>
+<body> <BR>
+     <center>श्रीसरस्वत्यै नमः <a id="TOP"></a><BR><BR> <a href="" target="_blank">NEP </a> <a
+               href="" target="_blank"> ENG</a> </center>
+             <h2 id="">Content</h2>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <p><a href="#ZA1">A1</a></p>
+                    <p><a href="#ZB2">B2</a></p>
+                    <p><a href="#ZC3">C3</a></p>
+                    <p><a href="#ZD4">D4</a></p>
+                    <p><a href="#ZE5">E5</a></p>
+                    <p><a href="#ZF6">F6</a></p>
+                    <p><a href="#ZG7">G7</a></p>
+                    <p><a href="#ZH8">H8</a></p>
+                    <p><a href="#ZI9">I9</a></p>
+               </div>
 
 
-<li id="fn202302160924">!TypeHere:- CRITICISM: Generally every law contains rules of recognition, rule of change and rule of adjudication. Constitution is also a amalgation of all three rules and primary rules. However ultimate rule of recognition is constitution. However, the House of Representative Declaration of 2063 can be regarded as ultimate Rule of Recognition though the written constitution (The constitution of Kingdom of Nepal, 2047) was still in existence. <a href="" target="_blank">!See</a> <a href="#fn202302160925" aria-label="Back to content">[&#x21A9;]</a></li>
- </ol>
-</footer>
+               <div class="column" style="background-color:#bbb;">
+                    <p><a href="#ZJ10">J10</a></p>
+                    <p><a href="#ZK11">K11</a></p>
+                    <p><a href="#ZL12">L12</a></p>
+                    <p><a href="#ZM13">M13</a></p>
+                    <p><a href="#ZN14">N14</a></p>
+                    <p><a href="#ZO15">O15</a></p>
+                    <p><a href="#ZP16">P16</a></p>
+                    <p><a href="#ZQ17">Q17</a></p>
+                    <p><a href="#ZR18">R18</a></p>
+               </div>
 
+               <div class="column" style="background-color:#bbb;">
+                    <p><a href="#ZS19">S19</a></p>
+                    <p><a href="#ZT20">T20</a></p>
+                    <p><a href="#ZU21">U21</a></p>
+                    <p><a href="#ZV22">V22</a></p>
+                    <p><a href="#ZW23">W23</a></p>
+                    <p><a href="#ZX24">X24</a></p>
+                    <p><a href="#ZY25">Y25</a></p>
+                    <p><a href="#ZZ26">Z26</a></p>
+                    <p><a href="#ZExtra">Extra</a></p>
+               </div>
+          </div>
+     </div>
 
+     <article>
+          <h2 id="ZA1">A1</h2>
+          <h3>Amendment of Constitution</h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p>See also <a href="https://shivaprasadacharya.github.io/pragyakosha.git.io/#keshavanandabharaticase" target="_blank"></a>Keshavananda Bharati Case</a></p>
+                    <p> <b>Power of Parliament:</b>Power of Parliament to amend the Constitution is only limited to the areas outside the sphere of basic structure.</p>
+                    <p> </p>
+               </div>
+          </div>
 
-  <p id="developedby"><u><b>Developed By:</b></u><br> Debaka Timilsina (M.A, M.Ed; LL.B) <br> Shiva Prasad Acharya
-    (M.Sc.; LL.M)<br> श्रीपञ्चमि, २०७९ <a id="BOTTOM"></a></p>
-    <div class="link-container">
-      <a href="#TOP">&#x25B2</a><BR><BR><BR>
-      <a href="#BOTTOM">&#x25BC</a>
-      </div>
-    <BR>
-</body>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZB2">B2</h2>
+          <h3>Basic Structure Doctrine</h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4 id="keshavanandabharaticase"></h4>
+                    <p><b>Keshavananda Bharati Case:</b> </p><p>&#8226;  Longest marathon 68 days hearing. </p><p>&#8226;  Largest bench in the history of Supreme Court of India (13 Justices) led by CJ Sikri and the judgement was delivered on the last working day of CJ Sikri. Upon his retirement the tradition of appointing the senior most judge as Chief Justice was abandoned and Justice Ray, who was fourth in the line of seniority, superseded other 3 justices and all three of them later resigned. </p><p>&#8226;  This case was heard for 6 months from October 31, 1972- March 23, 1973. ( Monday, Wednesday and Thursday) </p><p>&#8226;  Nani Palkhiwala was the leading lawyer teamed with CK Daphtary, MC Chagla and was assisted by Soli Soarabjee, Anil Divan DM Popat, and Fali Nariman and others. For Keshavananda Bharati. </p><p>&#8226;  Funding of the litigation was done by Coal, Mining and Sugar Company. </p><p>&#8226;  Lawyers were kept at Oberoi Hotel during hearing days. </p><p>&#8226;  Counter team was led by HM Seervai ( State of Kerala) and Niren De ( AG UOI). </p><p>&#8226;  Palkhiwala and his. team argued for 31 days. Palkhiwala rejoined pleaded for 2 days. </p><p>&#8226;  HM Seervai argued for 21 days Niren Dde (AG of India) and team argued for 12 days. </p><p>&#8226;  Longest judgement of 703 pages. </p><p>&#8226;  Golakhnath was overruled by 9 of the 13 judges ( there was division of justices in various points to by 7:6). </p><p>&#8226;  Ratio Power of the Parliament to amend the Constitution would not include the power to alter its basic structure or essential features- Basic Structure Doctrine. </p><p>&#8226;  By this case Supreme Court strengthen the power of judicial review and ipso facto, placed a limitation on the parliament's power to amend the constitution. This is the case from which the reputation and recognition of the constitutional lawyers was heighten. </p><p>&#8226;  That time Indira Gandhi was the Prime Minister of India with stunning victory, gathering almost 350 seats out of the total strength of 540 and has pressing interest of Government in this case. Justice Jagmohan (One among 13) said, “ I got the impression from the first day of hearing that minds of justices were closed and views were determined."</p>
+               </div>
+          </div>
+          <h2 id="ZC3">C3</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZD4">D4</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZE5">E5</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZF6">F6</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZG7">G7</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZH8">H8</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZI9">I9</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZJ10">J10</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZK11">K11</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZL12">L12</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZM13">M13</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZN14">N14</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZO15">O15</h2>
+          <h3>Ordinance</h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p>Effect of Unapproved Ordinance (Amendment Ordinance) on the Original Act</p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+
+          <h2 id="ZP16">P16</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+
+          <h2 id="ZQ17">Q17</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+
+          <h2 id="ZR18">R18</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZS19">S19</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZT20">T20</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZU21">U21</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZV22">V22</h2>
+          <h4></h4>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZW23">W23</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZX24">X24</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZY25">Y25</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZZ26">Z26</h2>
+          <h3></h3>
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+          <h2 id="ZExtra">Extra</h2>
+         
+          <div class="row"> 
+               <div class="column" style="background-color:#bbb;">
+                  <h4>Links</h4> 
+                   <a href="https://www.thefreedictionary.com">Fine Dictionary</a><br><br>
+                    <a href="https://www.bolpatra.gov.np/egp/openDateConverter ">Date Converter</a><br><br>
+<h4>Typical Words</h4>
+तपसिल खण्डः Particualrs/ Particular Section<br>
+विपक्षीः Opponent/ Respondent<br>
+प्रत्यर्थीः Rejoinder<br>
+चियापानः tea reception<br>
+
+                    <p></p>
+                    <p></p>
+               </div>
+          </div>
+
+          <div class="row">
+               <div class="column" style="background-color:#bbb;">
+                    <h4></h4>
+                    <p></p>
+               </div>
+          </div>
+
+<h2>Sample</h2>
+          <div class="row">
+               <div class="column" style="background-color:#aaa;">
+                    <h3>नमूनाको लागि</h3>
+                    <p></p>
+                    <p>!लेख्नुहोस् <a href="#fn202302Time" aria-describedby="footnote-label"
+                              id="fn2023Time"></a>!निरन्तरलेख्नुहोस्</p>
+               </div>
+               <div class="column" style="background-color:#bbb;">
+                    <h3>  Only for Sample </h3>
+                    <p>xyz <a href="#fn20230209T2217" aria-describedby="footnote-label" id="fn20230209T2218"></a>
+                         Continue your text
+                         here</p>
+                    <p>xyz <a href="#fn202302T" aria-describedby="footnote-label" id="fn2023T"></a> Continue
+                         your text
+                         here</p>
+               </div>
+          </div>
+
+     </article>
+
+     <footer>
+          <h2 class="visually-hidden" id="footnote-label">Endnotes</h2>
+          <ol>
+              
+              
+               <li id="fn202302162027">!TypeHere:संवैधानिक परिषद (काम, कर्तव्य, अधिकार र कार्यविधि) सम्बन्धी ऐन, २०६६ लाई पटक पटक अध्यादेशमार्फत संशोधन भयो । ओली सरकारले ल्याएको अध्यादेश संसदबाट पारित हुन नसक्दा स्वतः निष्क्रिय भयो भने त्यही अध्यादेशका कारण पुरानो ऐनका कतिपय प्रावधान भने निष्क्रिय हुन पुगे। अध्यादेश निष्क्रिय भएपछि ऐनका प्रावधानहरु स्वतः जाग्छन् वा जाग्दैनन्?। रिक्तता हटाउन संसदीय प्रक्रिया पूरा गर्नुपर्छ वा पर्दैन?<a href="https://www.onlinekhabar.com/2023/02/1264282" target="_blank">!See:-OK News:तत्काल आउँदैनन् प्रधानन्यायाधीश, संवैधानिक परिषद्को कानुन नै अपूरो</a> <a href="#fn202302162028"
+                 aria-label="Back to content">[&#x21A9;]</a></li>
+          </ol>
+     </footer>
+     <p id="developedby"><u><b>Developed By:</b></u><br> Debaka Timilsina (M.A, M.Ed; LL.B) <br> Shiva Prasad
+          Acharya
+          (M.Sc.; LL.M)<br> श्रीपञ्चमि, २०७९ <a id="BOTTOM"></a></p>         
+          <div class="link-container">
+               <a href="#TOP">&#x25B2</a><BR><BR><BR>
+               <a href="#BOTTOM">&#x25BC</a>
+               </div>
+     </body>
 
 </html>
-<!-- <a href="#fn" aria-describedby="footnote-label" id="fn"></a>
-<li id="fn">!TypeHere: <a href="" target="_blank">!See:- </a> <a href="#fn"
-  aria-label="Back to content">[&#x21A9;]</a></li> -->
+<!-- pushed on 20230217-0921 -->
 
-  <!-- <a href="#fn1" aria-describedby="footnote-label" id="fn2"></a>
-<li id="fn1">!TypeHere:3 <a href="" target="_blank">!See:- </a> <a href="#fn2"
-  aria-label="Back to content">[&#x21A9;]</a></li> -->
